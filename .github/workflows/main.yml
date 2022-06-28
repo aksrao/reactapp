@@ -10,7 +10,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
       - name: install dependencies
-        run: npm install
+        run: npm cache clean -f | rm -rf node_modules |npm install
       - name: Build react-app
         run: npm run build
       - name: Set aws credentials
